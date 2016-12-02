@@ -32,11 +32,11 @@ class File {
 	 * @param string $contents
 	 * @return $this
 	 */
-	public function write($contents) {
+	public function write($contents, $flags = 0) {
 		$dir = new Directory($this->getDirname());
 		$dir->make();
 	
-		file_put_contents($this->pathname, $contents);
+		file_put_contents($this->pathname, $contents, $flags);
 		return $this;
 	}
 	
